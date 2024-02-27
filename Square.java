@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+//done
+
 public class Square implements DrawingObject {
 
     private double x, y, size;
