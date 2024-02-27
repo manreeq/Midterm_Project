@@ -3,10 +3,20 @@ import java.awt.geom.*;
 
 public class Circle implements DrawingObject {
 
+    private double x, y, size;
+    private Color color;
+
+    public Circle(double x, double y, double s, Color c) {
+        this.x = x;
+        this.y = y;
+        size = s;
+        color = c;
+    }
+
     public void draw(Graphics2D g2d) {
-        Ellipse2D.Double e = new Ellipse2D.Double(200,75,100,100);
-        g2d.setColor(Color.BLACK);
-        g2d.fill(e);
+        Ellipse2D.Double c = new Ellipse2D.Double(x, y, size, size);
+        g2d.setColor(color);
+        g2d.fill(c);
     }
 
 }
