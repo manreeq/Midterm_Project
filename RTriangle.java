@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-//to be tested
+//done
 
 public class RTriangle implements DrawingObject {
 
