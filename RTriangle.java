@@ -3,7 +3,7 @@ import java.awt.geom.*;
 
 //to be tested
 
-public class RTriangle {
+public class RTriangle implements DrawingObject {
 
     private double x, y, width, height;
     private Color color;
@@ -16,7 +16,7 @@ public class RTriangle {
         color = c;
     }
 
-    public void drawTriangle(Graphics2D g2d){
+    public void draw(Graphics2D g2d) {
         Path2D.Double t = new Path2D.Double();
         t.moveTo(x, y);
         t.lineTo(x + width, y);
