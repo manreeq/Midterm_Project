@@ -10,9 +10,11 @@ public class SceneCanvas extends JComponent {
 
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-
         Rectangle background = new Rectangle(0, 0, 800, 600, Color.BLACK);
         background.draw(g2d);
+
+        RTriangle test = new RTriangle(400, 300, -20, 40, Color.BLUE);
+        test.draw(g2d);
 
     }
 

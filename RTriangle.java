@@ -18,12 +18,13 @@ public class RTriangle implements DrawingObject {
 
     public void draw(Graphics2D g2d) {
         Path2D.Double t = new Path2D.Double();
+
         t.moveTo(x, y);
         t.lineTo(x + width, y);
-        t.moveTo(x, y);
-        t.lineTo(x, y + height);
+        t.lineTo(x, y - height);
         t.closePath();
         g2d.setColor(color);
         g2d.fill(t);
+
     }
 }
