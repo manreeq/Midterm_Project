@@ -21,7 +21,6 @@ public class Person implements DrawingObject{
         
         Ellipse body = new Ellipse(x, y + width, width, height, color);
         body.draw(g2d);
-
     }
 
 }
