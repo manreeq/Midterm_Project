@@ -4,9 +4,12 @@ import java.awt.event.*;
 
 public class SceneCanvas extends JComponent {
 
+    Timer timer;
 
     public SceneCanvas() {
         this.setPreferredSize(new Dimension(800, 600));
+        //timer = new Timer(5, new TimerListener(5.00, this));
+        //timer.start();
     }
 
     @Override
@@ -14,8 +17,9 @@ public class SceneCanvas extends JComponent {
         Graphics2D g2d = (Graphics2D) g;
         RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
-        // Timer timer = new Timer(500);
         
+
+
         Rectangle background = new Rectangle(0, 0, 800, 600, Color.BLACK);
         background.draw(g2d);
 
