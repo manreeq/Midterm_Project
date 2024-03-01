@@ -16,7 +16,7 @@ public class Person implements DrawingObject{
     }
 
     public void draw(Graphics2D g2d) {
-        Circle head = new Circle(x, y + 10, width, color);
+        Circle head = new Circle(x, y + (height/10), width, color);
         head.draw(g2d);
         
         Ellipse body = new Ellipse(x, y + width, width, height, color);

@@ -4,10 +4,23 @@ import java.awt.event.*;
 
 public class SceneCanvas extends JComponent {
 
+    Timer timer;
+    int delay;
+    int velocity;
+    ActionListener al;
+
     public SceneCanvas() {
         this.setPreferredSize(new Dimension(800, 600));
+        delay = 50;
+        al = new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+
+            }
+        };
+        timer = new Timer(delay, al);
     }
 
+    @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
