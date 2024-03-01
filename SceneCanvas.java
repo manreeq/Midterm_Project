@@ -4,9 +4,12 @@ import java.awt.event.*;
 
 public class SceneCanvas extends JComponent {
 
+    Timer timer;
+    double velocity;
 
     public SceneCanvas() {
         this.setPreferredSize(new Dimension(800, 600));
+        velocity = 1;
     }
 
     @Override
@@ -14,8 +17,9 @@ public class SceneCanvas extends JComponent {
         Graphics2D g2d = (Graphics2D) g;
         RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
-        // Timer timer = new Timer(500);
         
+
+
         Rectangle background = new Rectangle(0, 0, 800, 600, Color.BLACK);
         background.draw(g2d);
 
@@ -60,5 +64,20 @@ public class SceneCanvas extends JComponent {
         test.draw(g2d);
 
     }
+
+    public void startAnimation() {
+        Timer timer = new Timer(50, new ActionListener() {
+            public double addVelocity = 0;
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                //test3.animate(addVelocity);
+                //how the fuck do we do this
+                repaint();       
+            }
+        });
+        timer.start();
+    }
+
 
 }

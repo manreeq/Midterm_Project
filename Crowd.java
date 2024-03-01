@@ -5,16 +5,15 @@ public class Crowd implements DrawingObject {
  
     private double x, y, height;
     private Color color;
-    int velocity;
-    Timer timer;
+    private int velocity;
+    private Timer timer;
 
     public Crowd(double x, double y, double h, Color c) {
         this.x = x;
         this.y = y;
         height = h;
         color = c;
-       // velocity = 5;
-        //animate();
+        velocity = 10;
     }
 
     public void draw(Graphics2D g2d) {
@@ -24,10 +23,8 @@ public class Crowd implements DrawingObject {
         }
     }
 
-    public void animate() {
-        //timer = new Timer(500, new TimerListener(x));
-        timer.start();
+    public void animate(double addVelocity) {
+        y = velocity * Math.sin(x) * (1 + addVelocity);
     }
-
 
 }

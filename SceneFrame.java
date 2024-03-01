@@ -27,14 +27,14 @@ public class SceneFrame {
         frame.pack();
         frame.setVisible(true);
         
-        ActionListener bl = new ActionListener () {
+        ActionListener aListener = new ActionListener () {
             @Override
             public void actionPerformed(ActionEvent ae) {
 
             }
         };
 
-        button.addActionListener(bl);
+        button.addActionListener(aListener);
 
     }
 
