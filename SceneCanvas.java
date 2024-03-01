@@ -4,20 +4,9 @@ import java.awt.event.*;
 
 public class SceneCanvas extends JComponent {
 
-    Timer timer;
-    int delay;
-    int velocity;
-    ActionListener al;
 
     public SceneCanvas() {
         this.setPreferredSize(new Dimension(800, 600));
-        delay = 50;
-        al = new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-
-            }
-        };
-        timer = new Timer(delay, al);
     }
 
     @Override
@@ -70,12 +59,6 @@ public class SceneCanvas extends JComponent {
         Crowd test = new Crowd(0, 540, 100, new Color(53, 53, 53));
         test.draw(g2d);
 
-    }
-
-    private class MyActionListener implements ActionListener {
-        public void actionPerformed(ActionEvent ae) {
-
-        }
     }
 
 }
