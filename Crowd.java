@@ -2,12 +2,13 @@ import java.awt.*;
 
 public class Crowd extends DrawingObject {
  
-    private double x, y, height;
+    private double x, y, height, tempy;
     private Color color;
 
     public Crowd(double x, double y, double h, Color c) {
         this.x = x;
         this.y = y;
+        tempy = y;
         height = h;
         color = c;
     }
@@ -19,8 +20,8 @@ public class Crowd extends DrawingObject {
         }
     }
 
-    public void animate(double speed) {
-        y -= speed;
+    public void animate(double speed, int tick) {
+        y = 20 * Math.sin(tick/speed) + tempy;
     }
 
 }

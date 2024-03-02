@@ -23,6 +23,6 @@ public class Person extends DrawingObject{
         body.draw(g2d);
     }
 
-    public void animate(double addVelocity) {}
+    public void animate(double addVelocity, int tick) {}
    
 }

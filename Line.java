@@ -24,6 +24,6 @@ public class Line extends DrawingObject {
         g2d.draw(l);
     }
 
-    public void animate(double addVelocity) {}
+    public void animate(double addVelocity, int tick) {}
     
 }

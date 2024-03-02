@@ -4,26 +4,28 @@ import java.awt.event.*;
 
 public class SceneCanvas extends JComponent {
 
-    private int velocity;
+    private double velocity;
     private int addVelocity;
-    Line l1;
-    Line l2;
-    Rectangle sbg;
-    Person p1;
-    Person p2;
-    Person p3;
-    Person p4;
-    Rectangle sfloor;
-    Trapezoid sroof;
-    Crowd c1;
-    Crowd c2;
-    Crowd c3;
-    Timer timer;
+    private Line l1;
+    private Line l2;
+    private Rectangle sbg;
+    private Person p1;
+    private Person p2;
+    private Person p3;
+    private Person p4;
+    private Rectangle sfloor;
+    private Trapezoid sroof;
+    private Crowd c1;
+    private Crowd c2;
+    private Crowd c3;
+    private Timer timer;
+    public int tick;
 
 
     public SceneCanvas() {
+        tick = 0;
         this.setPreferredSize(new Dimension(800, 600));
-        velocity = 1;
+        velocity = 100;
         addVelocity = 0;
 
         //crowd
@@ -77,18 +79,23 @@ public class SceneCanvas extends JComponent {
     }
 
     public void strum() {
-        addVelocity += 20;
+        addVelocity += 50;
     }
 
     public void animateDrawing(DrawingObject dObject) {
-        timer = new Timer(20, new ActionListener() {
+        timer = new Timer(15, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                dObject.animate(velocity + addVelocity);
+                tick++;
+                dObject.animate(velocity - addVelocity, tick);
                 repaint();       
             }
         });
         timer.start();
+    }
+
+    public int getTick() {
+        return tick;
     }
 
     private void animateCanvas() {

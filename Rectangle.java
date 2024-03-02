@@ -22,6 +22,6 @@ public class Rectangle extends DrawingObject {
         g2d.fill(sq);
     }
 
-    public void animate(double addVelocity) {}
+    public void animate(double addVelocity, int tick) {}
  
 }
