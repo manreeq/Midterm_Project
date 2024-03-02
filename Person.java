@@ -2,7 +2,7 @@ import java.awt.*;
 
 //done
 
-public class Person implements DrawingObject{
+public class Person extends DrawingObject{
     
     private double x, y, width, height;
     private Color color;
@@ -22,5 +22,7 @@ public class Person implements DrawingObject{
         Ellipse body = new Ellipse(x, y + width, width, height, color);
         body.draw(g2d);
     }
+
+    public void animate(double addVelocity) {}
 
 }

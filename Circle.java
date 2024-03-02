@@ -3,7 +3,7 @@ import java.awt.geom.*;
 
 //done
 
-public class Circle implements DrawingObject {
+public class Circle extends DrawingObject {
 
     private double x, y, size;
     private Color color;
@@ -20,5 +20,7 @@ public class Circle implements DrawingObject {
         g2d.setColor(color);
         g2d.fill(c);
     }
+
+    public void animate(double addVelocity) {}
 
 }

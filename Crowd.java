@@ -1,19 +1,15 @@
 import java.awt.*;
-import javax.swing.*;
 
-public class Crowd implements DrawingObject {
+public class Crowd extends DrawingObject {
  
     private double x, y, height;
     private Color color;
-    private int velocity;
-    private Timer timer;
 
     public Crowd(double x, double y, double h, Color c) {
         this.x = x;
         this.y = y;
         height = h;
         color = c;
-        velocity = 10;
     }
 
     public void draw(Graphics2D g2d) {
@@ -23,8 +19,9 @@ public class Crowd implements DrawingObject {
         }
     }
 
-    public void animate(double addVelocity) {
-        y = velocity * Math.sin(x) * (1 + addVelocity);
+    public void animate(double speed) {
+        //y = velocity * Math.sin(x) * (1 + addVelocity);
+        y -= 20;
     }
 
 }

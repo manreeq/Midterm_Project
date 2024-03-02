@@ -3,7 +3,7 @@ import java.awt.geom.*;
 
 //done
 
-public class RTriangle implements DrawingObject {
+public class RTriangle extends DrawingObject {
 
     private double x, y, width, height;
     private Color color;
@@ -27,4 +27,6 @@ public class RTriangle implements DrawingObject {
         g2d.fill(t);
 
     }
+
+    public void animate(double addVelocity) {}
 }

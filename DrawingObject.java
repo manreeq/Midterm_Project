@@ -3,8 +3,10 @@ import javax.swing.*;
 
 //gawing abstract class?
 
-public interface DrawingObject /*extends JComponent*/ {
-    void draw(Graphics2D g2d);
+public abstract class DrawingObject /*extends JComponent*/ {
+    abstract void draw(Graphics2D g2d);
+    
+    abstract void animate(double addVelocity);
     /*
     void adjustX(double distance);
     double getX();

@@ -3,7 +3,7 @@ import java.awt.geom.*;
 
 //done
 
-public class Ellipse implements DrawingObject {
+public class Ellipse extends DrawingObject {
 
     private double x, y, width, height;
     private Color color;
@@ -21,5 +21,7 @@ public class Ellipse implements DrawingObject {
         g2d.setColor(color);
         g2d.fill(c);
     }
+
+    public void animate(double addVelocity) {}
 
 }

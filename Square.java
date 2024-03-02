@@ -3,7 +3,7 @@ import java.awt.geom.*;
 
 //done
 
-public class Square implements DrawingObject {
+public class Square extends DrawingObject {
 
     private double x, y, size;
     private Color color;
@@ -20,5 +20,7 @@ public class Square implements DrawingObject {
         g2d.setColor(color);
         g2d.fill(sq);
     }
+
+    public void animate(double addVelocity) {}
 
 }

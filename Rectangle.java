@@ -3,7 +3,7 @@ import java.awt.geom.*;
 
 //done
 
-public class Rectangle implements DrawingObject {
+public class Rectangle extends DrawingObject {
 
     private double x, y, width, height;
     private Color color;
@@ -21,5 +21,7 @@ public class Rectangle implements DrawingObject {
         g2d.setColor(color);
         g2d.fill(sq);
     }
+
+    public void animate(double addVelocity) {}
 
 }

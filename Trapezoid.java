@@ -1,7 +1,7 @@
 import java.awt.*;
 //done
 
-public class Trapezoid implements DrawingObject {
+public class Trapezoid extends DrawingObject {
 
     private double x, y, width, height;
     private Color color;
@@ -24,5 +24,7 @@ public class Trapezoid implements DrawingObject {
         RTriangle right = new RTriangle(x + width, y, width/5, height, color);
         right.draw(g2d);
     }
+
+    public void animate(double addVelocity) {}
 
 }

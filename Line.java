@@ -3,7 +3,7 @@ import java.awt.geom.*;
 
 //done
 
-public class Line implements DrawingObject {
+public class Line extends DrawingObject {
 
     private int xs, xy, xe, ye, thickness;
     private Color color;
@@ -23,4 +23,6 @@ public class Line implements DrawingObject {
         g2d.setColor(color);
         g2d.draw(l);
     }
+
+    public void animate(double addVelocity) {}
 }
