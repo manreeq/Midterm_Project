@@ -20,9 +20,7 @@ public class Crowd extends DrawingObject {
     }
 
     public void animate(double speed) {
-        //y = velocity * Math.sin(x) * (1 + addVelocity);
-        x += speed;
-        y = 100*Math.sin(x);
+        y -= speed;
     }
 
 }

@@ -4,8 +4,8 @@ import java.awt.event.*;
 
 public class SceneCanvas extends JComponent {
 
-    private double velocity;
-    private double addVelocity;
+    private int velocity;
+    private int addVelocity;
     Line l1;
     Line l2;
     Rectangle sbg;
@@ -18,11 +18,12 @@ public class SceneCanvas extends JComponent {
     Crowd c1;
     Crowd c2;
     Crowd c3;
+    Timer timer;
 
 
     public SceneCanvas() {
         this.setPreferredSize(new Dimension(800, 600));
-        velocity = 10;
+        velocity = 1;
         addVelocity = 0;
 
         //crowd
@@ -75,19 +76,21 @@ public class SceneCanvas extends JComponent {
 
     }
 
+    public void strum() {
+        addVelocity += 20;
+    }
 
     public void animateDrawing(DrawingObject dObject) {
-        Timer timer = new Timer(50, new ActionListener() {
+        timer = new Timer(20, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                dObject.animate(velocity);
+                dObject.animate(velocity + addVelocity);
                 repaint();       
             }
         });
         timer.start();
     }
 
-    
     private void animateCanvas() {
         animateDrawing(l1);
         animateDrawing(l2);

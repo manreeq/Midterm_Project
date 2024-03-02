@@ -30,9 +30,7 @@ public class SceneFrame {
         ActionListener aListener = new ActionListener () {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                if (ae.getSource() == button) {
-                    
-                }
+                canvas.strum();
             }
         };
 
