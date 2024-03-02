@@ -23,5 +23,4 @@ public class Ellipse extends DrawingObject {
     }
 
     public void animate(double addVelocity) {}
-
 }

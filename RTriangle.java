@@ -29,4 +29,5 @@ public class RTriangle extends DrawingObject {
     }
 
     public void animate(double addVelocity) {}
+ 
 }

@@ -25,4 +25,5 @@ public class Line extends DrawingObject {
     }
 
     public void animate(double addVelocity) {}
+    
 }

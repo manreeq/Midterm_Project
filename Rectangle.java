@@ -23,5 +23,5 @@ public class Rectangle extends DrawingObject {
     }
 
     public void animate(double addVelocity) {}
-
+ 
 }

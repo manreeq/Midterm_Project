@@ -24,5 +24,5 @@ public class Person extends DrawingObject{
     }
 
     public void animate(double addVelocity) {}
-
+   
 }
