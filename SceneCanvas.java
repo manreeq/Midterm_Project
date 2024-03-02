@@ -87,7 +87,6 @@ public class SceneCanvas extends JComponent {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 c+=10; 
-                //System.out.println(c);
                 if (c > 800) {
                     if (addVelocity == 80) addVelocity -= 80;
                     c = 0;
@@ -101,7 +100,7 @@ public class SceneCanvas extends JComponent {
 
 
     public void animateDrawing(DrawingObject dObject) {
-        timer = new Timer(15, new ActionListener() {
+        timer = new Timer(30, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 tick++;
