@@ -21,6 +21,6 @@ public class Square extends DrawingObject {
         g2d.fill(sq);
     }
 
-    public void animate(double addVelocity, int tick) {}
+    public void animate(double speed, int tick) {}
 
 }

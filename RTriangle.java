@@ -28,6 +28,6 @@ public class RTriangle extends DrawingObject {
 
     }
 
-    public void animate(double addVelocity, int tick) {}
+    public void animate(double speed, int tick) {}
  
 }

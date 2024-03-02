@@ -21,6 +21,6 @@ public class Circle extends DrawingObject {
         g2d.fill(c);
     }
 
-    public void animate(double addVelocity, int tick) {}
+    public void animate(double speed, int tick) {}
 
 }

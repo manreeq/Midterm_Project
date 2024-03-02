@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Person extends DrawingObject{
     
-    private double x, y, width, height;
+    private double x, y, width, height, tempy;
     private Color color;
 
     public Person(double x, double y, double h, Color c) {
@@ -13,6 +13,7 @@ public class Person extends DrawingObject{
         width = h/3;
         height = h;
         color = c;
+        tempy = y;
     }
 
     public void draw(Graphics2D g2d) {
@@ -23,6 +24,8 @@ public class Person extends DrawingObject{
         body.draw(g2d);
     }
 
-    public void animate(double addVelocity, int tick) {}
+    public void animate(double speed, int tick) {
+        y = 5 * Math.sin(tick/speed) + tempy;
+    }
    
 }

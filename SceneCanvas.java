@@ -19,7 +19,9 @@ public class SceneCanvas extends JComponent {
     private Crowd c2;
     private Crowd c3;
     private Timer timer;
-    public int tick;
+    private Timer strumTimer;
+    private int tick;
+    private int c;
 
 
     public SceneCanvas() {
@@ -75,12 +77,28 @@ public class SceneCanvas extends JComponent {
         c1.draw(g2d);
         c2.draw(g2d);
         c3.draw(g2d);  
-
     }
 
     public void strum() {
-        addVelocity += 50;
+        if (addVelocity == 0) addVelocity += 80;
+        System.out.println(addVelocity);
+        c = 0;
+        strumTimer = new Timer(15, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                c+=10; 
+                //System.out.println(c);
+                if (c > 800) {
+                    if (addVelocity == 80) addVelocity -= 80;
+                    c = 0;
+                    strumTimer.stop();
+                }
+            }
+        });
+
+        strumTimer.start();
     }
+
 
     public void animateDrawing(DrawingObject dObject) {
         timer = new Timer(15, new ActionListener() {
@@ -94,9 +112,11 @@ public class SceneCanvas extends JComponent {
         timer.start();
     }
 
+
     public int getTick() {
         return tick;
     }
+
 
     private void animateCanvas() {
         animateDrawing(l1);
@@ -109,6 +129,4 @@ public class SceneCanvas extends JComponent {
         animateDrawing(c2);
         animateDrawing(c3);
     } 
-
-
 }

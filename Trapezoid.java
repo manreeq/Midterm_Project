@@ -25,6 +25,6 @@ public class Trapezoid extends DrawingObject {
         right.draw(g2d);
     }
 
-    public void animate(double addVelocity, int tick) {}
+    public void animate(double speed, int tick) {}
 
 }

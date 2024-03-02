@@ -31,6 +31,7 @@ public class SceneFrame {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 canvas.strum();
+                
             }
         };
 
