@@ -10,6 +10,9 @@ public class SceneCanvas extends JComponent {
     private Line l1;
     private Line l2;
     private Rectangle sbg;
+    private Square design1;
+    private Square design2;
+    private Square design3;
     private Person p1;
     private Person p2;
     private Person p3;
@@ -43,6 +46,16 @@ public class SceneCanvas extends JComponent {
         //stage
         sbg =  new Rectangle(190, 220, 420, 370, Color.WHITE);
         elements.add(sbg);
+
+        design1 = new Square(270, 285, 100, new Color(255, 204, 204));
+        elements.add(design1);
+
+        design2 = new Square(435, 285, 100, new Color(255, 204, 204));
+        elements.add(design2);
+
+        design3 = new Square(330, 260, 150, new Color(255, 102, 102));
+        elements.add(design3);
+
         p1 = new Person(290, 370, 60, Color.BLACK);
         elements.add(p1);
         p2 = new Person(350, 370, 60, Color.BLACK);
@@ -90,7 +103,7 @@ public class SceneCanvas extends JComponent {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 c+=10; 
-                if (c > 800) {
+                if (c > 9500) {
                     if (addVelocity == 80) addVelocity -= 80;
                     c = 0;
                     strumTimer.stop();
