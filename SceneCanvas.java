@@ -13,6 +13,9 @@ public class SceneCanvas extends JComponent {
     private Square design1;
     private Square design2;
     private Square design3;
+    private Square design4;
+    private Square design5;
+    private Square design6;
     private Person p1;
     private Person p2;
     private Person p3;
@@ -37,6 +40,9 @@ public class SceneCanvas extends JComponent {
 
         elements = new ArrayList<>();
 
+        Background bg = new Background(0, 0, Color.BLACK, 800, 600, new Color(0,0,80));
+        elements.add(bg);
+
         //lights
         l1 = new Line(400, 600, 0, 0, 90, Color.YELLOW);
         elements.add(l1);
@@ -46,13 +52,10 @@ public class SceneCanvas extends JComponent {
         //stage
         sbg =  new Rectangle(190, 220, 420, 370, Color.WHITE);
         elements.add(sbg);
-
         design1 = new Square(270, 285, 100, new Color(255, 204, 204));
         elements.add(design1);
-
         design2 = new Square(435, 285, 100, new Color(255, 204, 204));
         elements.add(design2);
-
         design3 = new Square(330, 260, 150, new Color(255, 102, 102));
         elements.add(design3);
 
@@ -64,8 +67,15 @@ public class SceneCanvas extends JComponent {
         elements.add(p3);
         p4 = new Person(470, 370, 60, Color.BLACK);
         elements.add(p4);
+
         sfloor =  new Rectangle(150, 440, 500, 100, new Color(183, 183, 183));
         elements.add(sfloor);
+        design4 = new Square(190, 460, 85, Color.BLACK);
+        elements.add(design4);
+        design5 = new Square(360, 460, 85, Color.BLACK);
+        elements.add(design5);
+        design6 = new Square(530, 460, 85, Color.BLACK);
+        elements.add(design6);
         sroof = new Trapezoid(190, 220, 420, 40, new Color(70, 70, 70));
         elements.add(sroof);
 
@@ -86,8 +96,10 @@ public class SceneCanvas extends JComponent {
         RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
-        Rectangle background = new Rectangle(0, 0, 800, 600, Color.BLACK);
-        background.draw(g2d);
+ 
+
+        //Rectangle background = new Rectangle(0, 0, 800, 600, Color.BLACK);
+        //background.draw(g2d);
 
 
         for (DrawingObject d : elements) {
