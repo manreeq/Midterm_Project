@@ -1,6 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class SceneCanvas extends JComponent {
 
@@ -22,6 +23,7 @@ public class SceneCanvas extends JComponent {
     private Timer strumTimer;
     private int tick;
     private int c;
+    private ArrayList<DrawingObject> elements;
 
 
     public SceneCanvas() {
@@ -30,23 +32,37 @@ public class SceneCanvas extends JComponent {
         velocity = 100;
         addVelocity = 0;
 
-        //crowd
-        c1 = new Crowd(0, 460, 100, Color.GRAY);
-        c2 = new Crowd(25, 500, 100, new Color(70, 70, 70));
-        c3 = new Crowd(0, 540, 100, new Color(53, 53, 53));
+        elements = new ArrayList<>();
 
         //lights
         l1 = new Line(400, 600, 0, 0, 90, Color.YELLOW);
+        elements.add(l1);
         l2 = new Line(400, 600, 800, 0, 90, Color.YELLOW);
+        elements.add(l2);
 
         //stage
-        p1 = new Person(290, 370, 60, Color.BLACK);
-        p2 = new Person(350, 370, 60, Color.BLACK);
-        p3 = new Person(410, 370, 60, Color.BLACK);
-        p4 = new Person(470, 370, 60, Color.BLACK);
         sbg =  new Rectangle(190, 220, 420, 370, Color.WHITE);
+        elements.add(sbg);
+        p1 = new Person(290, 370, 60, Color.BLACK);
+        elements.add(p1);
+        p2 = new Person(350, 370, 60, Color.BLACK);
+        elements.add(p2);
+        p3 = new Person(410, 370, 60, Color.BLACK);
+        elements.add(p3);
+        p4 = new Person(470, 370, 60, Color.BLACK);
+        elements.add(p4);
         sfloor =  new Rectangle(150, 440, 500, 100, new Color(183, 183, 183));
+        elements.add(sfloor);
         sroof = new Trapezoid(190, 220, 420, 40, new Color(70, 70, 70));
+        elements.add(sroof);
+
+        //crowd
+        c1 = new Crowd(0, 460, 100, Color.GRAY);
+        elements.add(c1);
+        c2 = new Crowd(25, 500, 100, new Color(70, 70, 70));
+        elements.add(c2);
+        c3 = new Crowd(0, 540, 100, new Color(53, 53, 53));
+        elements.add(c3);
 
         animateCanvas();
     }
@@ -60,23 +76,10 @@ public class SceneCanvas extends JComponent {
         Rectangle background = new Rectangle(0, 0, 800, 600, Color.BLACK);
         background.draw(g2d);
 
-        //lights
-        l1.draw(g2d);
-        l2.draw(g2d);
 
-        //stage
-        sbg.draw(g2d);
-        p1.draw(g2d);
-        p2.draw(g2d);
-        p3.draw(g2d);
-        p4.draw(g2d);
-        sfloor.draw(g2d);
-        sroof.draw(g2d);
-
-        //crowd
-        c1.draw(g2d);
-        c2.draw(g2d);
-        c3.draw(g2d);  
+        for (DrawingObject d : elements) {
+            d.draw(g2d);
+        }
     }
 
     public void strum() {
