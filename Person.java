@@ -21,8 +21,10 @@
 
 import java.awt.*;
 
-
-public class Person extends DrawingObject{
+/**
+ * This is the class for the composite Person shape. This class is called in the composite crowd shape. 
+ */
+public class Person implements DrawingObject{
     
     private double x, y, width, height, tempy;
     private Color color;

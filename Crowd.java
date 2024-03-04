@@ -21,7 +21,10 @@
 
 import java.awt.*;
 
-public class Crowd extends DrawingObject {
+/**
+ * This is the class to create the composite crowd shape. It uses several Person objects.
+ */
+public class Crowd implements DrawingObject {
  
     private double x, y, height, tempy;
     private Color color;

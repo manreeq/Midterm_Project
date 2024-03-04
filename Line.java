@@ -22,8 +22,10 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-
-public class Line extends DrawingObject {
+/**
+ * This is the class for the basic line shape. This is used to make the lights. 
+ */
+public class Line implements DrawingObject {
 
     private double xs, xy, xe, ye, rotate;
     private int thickness;

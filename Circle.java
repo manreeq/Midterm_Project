@@ -22,8 +22,10 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-
-public class Circle extends DrawingObject {
+/**
+ * This is the class used to create the basic circle shape. This class is called in the composite Person class.
+ */
+public class Circle implements DrawingObject {
 
     private double x, y, size;
     private Color color;

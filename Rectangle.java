@@ -22,8 +22,10 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-
-public class Rectangle extends DrawingObject {
+/**
+ * This is the class for the basic rectangle shape. This is called in the composite Trapezoid class. 
+ */
+public class Rectangle implements DrawingObject {
 
     private double x, y, width, height;
     private Color color;

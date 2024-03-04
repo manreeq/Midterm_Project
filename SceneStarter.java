@@ -19,6 +19,9 @@
     of my program.
 */
 
+/**
+ * This is the class with the main method. Serves as the entry point to run the actual program. 
+ */
 public class SceneStarter {
     
     public static void main(String[] args) {

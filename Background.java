@@ -23,6 +23,9 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+ * This is the class to creat the background shape. It makes use of GradientPaint to create the gradient.
+ */
 public class Background extends DrawingObject {
     
     private float x1, y1, x2, y2;

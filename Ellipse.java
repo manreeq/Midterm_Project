@@ -22,8 +22,10 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-
-public class Ellipse extends DrawingObject {
+/**
+ * This is the class for the basic Elipse shape. This shape is called in the composite Person class. 
+ */
+public class Ellipse implements DrawingObject {
 
     private double x, y, width, height;
     private Color color;

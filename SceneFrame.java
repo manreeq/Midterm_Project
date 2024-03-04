@@ -25,7 +25,11 @@ import javax.swing.*;
 import javax.sound.sampled.*;
 import java.io.*;
 
-
+/**
+ * This class is the frame in which all of the elements will be visualized. 
+ * This class is responsible for all the GUI components of the program. 
+ * Contains the method to read and play the audio file. 
+ */
 public class SceneFrame {
 
     private SceneCanvas canvas;

@@ -21,8 +21,20 @@
 
 import java.awt.*;
 
-public abstract class DrawingObject {
+/**
+ * This is the interface used for all shapes. It contains the draw and animate methods to be called within these classes. 
+ */
+public interface DrawingObject {
+    /**
+     * Draws the object. 
+     * @param g2d
+     */
     abstract void draw(Graphics2D g2d);
     
+    /**
+     * Animates the object. 
+     * @param speed
+     * @param tick
+     */
     abstract void animate(double speed, int tick);
 }

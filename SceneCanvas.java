@@ -24,6 +24,10 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+/**
+ * This is the canvas class where all the different elements are instantiated and drawn. 
+ * This class also contains several methods for the animations in the graphic. 
+ */
 public class SceneCanvas extends JComponent {
 
     private double velocity;

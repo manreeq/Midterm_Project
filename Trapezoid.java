@@ -21,7 +21,10 @@
 
 import java.awt.*;
 
-public class Trapezoid extends DrawingObject {
+/**
+ * This is the class to create the composite Trapezoid shape. Makes use of the basic Rectangle and RTriangle shapes. 
+ */
+public class Trapezoid implements DrawingObject {
 
     private double x, y, width, height;
     private Color color;

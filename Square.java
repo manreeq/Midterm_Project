@@ -22,8 +22,10 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-
-public class Square extends DrawingObject {
+/**
+ * This is the class to create the basic square shape. This shape is used to create simple stage designs.
+ */
+public class Square implements DrawingObject {
 
     private double x, y, size;
     private Color color;

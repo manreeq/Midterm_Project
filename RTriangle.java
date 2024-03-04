@@ -22,7 +22,10 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-public class RTriangle extends DrawingObject {
+/**
+ * This is the class for the basic Right Triangle shape. This is called in the composite Trapezoid shape. 
+ */
+public class RTriangle implements DrawingObject {
 
     private double x, y, width, height;
     private Color color;
