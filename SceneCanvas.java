@@ -56,7 +56,9 @@ public class SceneCanvas extends JComponent {
     private int c;
     private ArrayList<DrawingObject> elements;
 
-
+    /**
+     * This is the constructor for the SceneCanvas class. It instantiates the shape objects that will be used, as well as call the method that will animate the objects.
+     */
     public SceneCanvas() {
         tick = 0;
         this.setPreferredSize(new Dimension(800, 600));
@@ -115,6 +117,10 @@ public class SceneCanvas extends JComponent {
         animateCanvas();
     }
 
+    /**
+     * This is the paintComponent method, which will not be called explicitly. It iterates through the elements ArrayList containing
+     * the shape objects and calls the draw() method on each of them.
+     */
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
@@ -127,6 +133,10 @@ public class SceneCanvas extends JComponent {
         }
     }
 
+    /**
+     * This method is called whenever the JButton is pressed. It basically makes the animation faster for the duration of 
+     * the song being played. This is achieved through another timer object.
+     */
     public void strum() {
         if (addVelocity == 0) addVelocity += 82;
         System.out.println(addVelocity);
@@ -147,6 +157,11 @@ public class SceneCanvas extends JComponent {
     }
 
 
+    /**
+     * This method is called when you want to animate a speciied shape object. It accepts a parameter of the type DrawingObject
+     * and calls the animate method of that specified object
+     * @param dObject
+     */
     public void animateDrawing(DrawingObject dObject) {
         timer = new Timer(30, new ActionListener() {
             @Override
@@ -160,20 +175,12 @@ public class SceneCanvas extends JComponent {
     }
 
 
-    public int getTick() {
-        return tick;
-    }
-
-
+    /**
+     * This method calls the animateDrawing() method on each of the DrawingObject inside the ArrayList elements
+     */
     private void animateCanvas() {
-        animateDrawing(l1);
-        animateDrawing(l2);
-        animateDrawing(p1);
-        animateDrawing(p2);
-        animateDrawing(p3);
-        animateDrawing(p4);
-        animateDrawing(c1);
-        animateDrawing(c2);
-        animateDrawing(c3);
+        for (DrawingObject d : elements) {
+            animateDrawing(d);
+        }
     } 
 }

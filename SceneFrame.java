@@ -37,12 +37,18 @@ public class SceneFrame {
     private JButton button;
     private Clip clip;
 
+    /**
+     * The constructor for the SceneFrame class, where a new instance of a SceneCanvas, JFrame, and JButton is instantiated
+     */
     public SceneFrame() {
         canvas = new SceneCanvas();
         frame = new JFrame();
         button = new JButton("Strum a Chord!");
     }
 
+    /**
+     * The method that sets the GUI up, as well as the button and the ActionListeners
+     */
     public void setUpGUI() {
         frame.pack();
         frame.setSize(800, 600);
@@ -69,6 +75,9 @@ public class SceneFrame {
 
     }
 
+    /**
+     * This method plays the audio when the JButton is pressed
+     */
     private void playAudio() {
         if (clip != null) {
             clip.stop();
