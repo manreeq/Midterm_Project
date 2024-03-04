@@ -30,6 +30,15 @@ public class Rectangle implements DrawingObject {
     private double x, y, width, height;
     private Color color;
 
+    /**
+     * Constructor method creates a rectangle object with parameters starting coordinates, width, height,
+     * and color.
+     * @param x
+     * @param y
+     * @param w
+     * @param h
+     * @param c
+     */
     public Rectangle(double x, double y, double w, double h, Color c) {
         this.x = x;
         this.y = y;
@@ -38,12 +47,18 @@ public class Rectangle implements DrawingObject {
         color = c;
     }
 
+    /**
+     * Draw method draws a rectangle using the given parameters
+     */
     public void draw(Graphics2D g2d) {
         Rectangle2D.Double sq = new Rectangle2D.Double(x, y, width, height);
         g2d.setColor(color);
         g2d.fill(sq);
     }
 
+    /**
+     * Animate method left empty since not used (part of interface)
+     */
     public void animate(double speed, int tick) {}
  
 }

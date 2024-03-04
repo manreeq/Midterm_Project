@@ -29,6 +29,13 @@ public class Person implements DrawingObject{
     private double x, y, width, height, tempy;
     private Color color;
 
+    /**
+     * Constructor methods creates a person object with parameters starting coordinates, height, and color
+     * @param x
+     * @param y
+     * @param h
+     * @param c
+     */
     public Person(double x, double y, double h, Color c) {
         this.x = x;
         this.y = y;
@@ -38,6 +45,9 @@ public class Person implements DrawingObject{
         tempy = y;
     }
 
+    /**
+     * Draw method draws a person using the basic shapes Circle and Elipse, with the given parameters
+     */
     public void draw(Graphics2D g2d) {
         Circle head = new Circle(x, y + (height/10), width, color);
         head.draw(g2d);
@@ -46,6 +56,9 @@ public class Person implements DrawingObject{
         body.draw(g2d);
     }
 
+    /**
+     * Animate method uses a sin function of time (timer tick) to oscillate y value of object up andf down
+     */
     public void animate(double speed, int tick) {
         y = 5 * Math.sin(tick/speed) + tempy;
     }

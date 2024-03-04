@@ -31,6 +31,16 @@ public class Line implements DrawingObject {
     private int thickness;
     private Color color;
 
+    /**
+     * Constructor method creates line object with parameters starting and ending coordinates, 
+     * thickness, and color, and sets default rotate position to 0.
+     * @param xs
+     * @param xy
+     * @param xe
+     * @param ye
+     * @param t
+     * @param c
+     */
     public Line(int xs, int xy, int xe, int ye, int t, Color c) {
         this.xs = xs;
         this.xy = xy;
@@ -41,6 +51,9 @@ public class Line implements DrawingObject {
         rotate = 0;
     }
 
+    /**
+     * Draw method draws the line with the given parameters.
+     */
     public void draw(Graphics2D g2d) {
         AffineTransform reset = g2d.getTransform();
         Line2D.Double l = new Line2D.Double(xs, xy, xe, ye);
@@ -51,6 +64,10 @@ public class Line implements DrawingObject {
         g2d.setTransform(reset);
     }
 
+    /**
+     * Animate method rotates line objects line to the left/right depending on the direction of the line,
+     * proportionally to the specified speed
+     */
     public void animate(double speed, int tick) {
         if (xs > xe) rotate = 10 * Math.sin(tick/speed);
         else rotate = -10 * Math.sin(tick/speed);

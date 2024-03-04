@@ -29,6 +29,14 @@ public class Crowd implements DrawingObject {
     private double x, y, height, tempy;
     private Color color;
 
+    /**
+     * Constructor methood creating the composite crowd shape; a row of Person objects with parameters of
+     * starting x and y coordinates, height of the persons, and color
+     * @param x
+     * @param y
+     * @param h
+     * @param c
+     */
     public Crowd(double x, double y, double h, Color c) {
         this.x = x;
         this.y = y;
@@ -37,6 +45,9 @@ public class Crowd implements DrawingObject {
         color = c;
     }
 
+    /**
+     * Draw method creates a row of Person objects with spaces in between them using the given parameters
+     */
     public void draw(Graphics2D g2d) {
         for (int i = 0; i <= 800; i += height/3) {
             Person person = new Person(x + (i + i/2), y, height, color);
@@ -44,6 +55,10 @@ public class Crowd implements DrawingObject {
         }
     }
 
+    /**
+     * Animate method uses a sin function of the time (timer tick), wherin the y value of the
+     * object oscillates up and down
+     */
     public void animate(double speed, int tick) {
         y = 20 * Math.sin(tick/speed) + tempy;
     }

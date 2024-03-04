@@ -30,6 +30,13 @@ public class Circle implements DrawingObject {
     private double x, y, size;
     private Color color;
 
+    /**
+     * Constructor method uses parameters of the starting x and y coordinates, and the size and color of the circle
+     * @param x
+     * @param y
+     * @param s
+     * @param c
+     */
     public Circle(double x, double y, double s, Color c) {
         this.x = x;
         this.y = y;
@@ -37,12 +44,18 @@ public class Circle implements DrawingObject {
         color = c;
     }
 
+    /**
+     * This method draws an elipse with the given parameters, with equal distance to endpoints creating a circle
+     */
     public void draw(Graphics2D g2d) {
         Ellipse2D.Double c = new Ellipse2D.Double(x, y, size, size);
         g2d.setColor(color);
         g2d.fill(c);
     }
 
+    /**
+     * Animate method left empty since not used (part of interface)
+     */
     public void animate(double speed, int tick) {}
 
 }

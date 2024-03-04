@@ -29,6 +29,15 @@ public class Trapezoid implements DrawingObject {
     private double x, y, width, height;
     private Color color;
 
+    /**
+     * Constructor method creates a trapezoid object with parameters starting coordinates, width, height,
+     * and color
+     * @param x
+     * @param y
+     * @param w
+     * @param h
+     * @param c
+     */
     public Trapezoid(double x, double y, double w, double h, Color c) {
         this.x = x;
         this.y = y;
@@ -37,6 +46,9 @@ public class Trapezoid implements DrawingObject {
         color = c;
     }
 
+    /**
+     * Draw method uses Rectangle and RTriangle objects to create a trapezoid using the given parameters.
+     */
     public void draw(Graphics2D g2d) {
         Rectangle middle = new Rectangle(x, y - height, width, height, color);
         middle.draw(g2d);
@@ -48,6 +60,9 @@ public class Trapezoid implements DrawingObject {
         right.draw(g2d);
     }
 
+    /**
+     * Animate method left empty since not used (part of interface)
+     */
     public void animate(double speed, int tick) {}
 
 }

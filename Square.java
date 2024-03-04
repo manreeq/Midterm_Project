@@ -30,6 +30,13 @@ public class Square implements DrawingObject {
     private double x, y, size;
     private Color color;
 
+    /**
+     * Constructor method creates a square with paramters starting coordinates, size, and color.
+     * @param x
+     * @param y
+     * @param s
+     * @param c
+     */
     public Square(double x, double y, double s, Color c) {
         this.x = x;
         this.y = y;
@@ -37,12 +44,18 @@ public class Square implements DrawingObject {
         color = c;
     }
 
+    /**
+     * Draw method creates a rectangle with equal height and width (identified in parameters) to create a square.
+     */
     public void draw(Graphics2D g2d) {
         Rectangle2D.Double sq = new Rectangle2D.Double(x, y, size, size);
         g2d.setColor(color);
         g2d.fill(sq);
     }
 
+    /**
+     * Animate method left empty since not used (part of interface)
+     */
     public void animate(double speed, int tick) {}
 
 }

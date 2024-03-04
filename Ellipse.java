@@ -30,6 +30,15 @@ public class Ellipse implements DrawingObject {
     private double x, y, width, height;
     private Color color;
 
+    /**
+     * Constructor method creates an alipse using the given parameters: starting x and y coordinates, 
+     *  width, height, and color.
+     * @param x
+     * @param y
+     * @param w
+     * @param h
+     * @param c
+     */
     public Ellipse(double x, double y, double w, double h, Color c) {
         this.x = x;
         this.y = y;
@@ -38,11 +47,17 @@ public class Ellipse implements DrawingObject {
         color = c;
     }
 
+    /**
+     * Draw method creates an elipse object using the given parameters
+     */
     public void draw(Graphics2D g2d) {
         Ellipse2D.Double c = new Ellipse2D.Double(x, y, width, height);
         g2d.setColor(color);
         g2d.fill(c);
     }
 
+    /**
+     * Animate method left empty since not used (part of interface)
+     */
     public void animate(double speed, int tick) {}
 }

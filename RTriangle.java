@@ -30,6 +30,15 @@ public class RTriangle implements DrawingObject {
     private double x, y, width, height;
     private Color color;
 
+    /**
+     * Constructor method creates a right triangle object with parameters starting coordinates, width, height,
+     * and color
+     * @param x
+     * @param y
+     * @param w
+     * @param h
+     * @param c
+     */
     public RTriangle(double x, double y, double w, double h, Color c){
         this.x = x;
         this.y = y;
@@ -38,6 +47,9 @@ public class RTriangle implements DrawingObject {
         color = c;
     }
 
+    /**
+     * Draw method draws a right triangle using the path method, following the given parameters
+     */
     public void draw(Graphics2D g2d) {
         Path2D.Double t = new Path2D.Double();
 
@@ -50,6 +62,9 @@ public class RTriangle implements DrawingObject {
 
     }
 
+    /**
+     * Animate method left empty since not used (part of interface)
+     */
     public void animate(double speed, int tick) {}
  
 }

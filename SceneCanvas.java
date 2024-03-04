@@ -138,7 +138,7 @@ public class SceneCanvas extends JComponent {
      * the song being played. This is achieved through another timer object.
      */
     public void strum() {
-        if (addVelocity == 0) addVelocity += 82;
+        if (addVelocity == 0) addVelocity += 63;
         System.out.println(addVelocity);
         c = 0;
         strumTimer = new Timer(15, new ActionListener() {
@@ -146,7 +146,7 @@ public class SceneCanvas extends JComponent {
             public void actionPerformed(ActionEvent ae) {
                 c+=10; 
                 if (c > 9500) {
-                    if (addVelocity == 82) addVelocity -= 82;
+                    if (addVelocity == 63) addVelocity -= 63;
                     c = 0;
                     strumTimer.stop();
                 }

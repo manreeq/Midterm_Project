@@ -42,6 +42,10 @@ public class Background implements DrawingObject {
         
     }
 
+    /**
+     * This method makes use of the java awt GradientPaint method in order to create the gradient of the
+     * sky background, and creates a rectangle shape with this color.
+     */
     public void draw(Graphics2D g2d) {
         GradientPaint g = new GradientPaint((x2/2), y1, color1, (x2/2), y2, color2);
         Rectangle2D.Double bgShape = new Rectangle2D.Double(x1, y1, x2-x1, y2-y1);
@@ -50,6 +54,9 @@ public class Background implements DrawingObject {
 
     }
 
+    /**
+     * Animate method left empty since not used (part of interface)
+     */
     public void animate(double speed, int tick) {}
 
 }
