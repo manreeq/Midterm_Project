@@ -1,3 +1,24 @@
+/**
+    This is a template for a Java file.
+    @author Evan Sebastian M. Garcia (232776)
+    @author Gabriel P. Hermosura (233070)
+    @version March 4, 2024
+**/
+
+/*
+    I have not discussed the Java language code in my program
+    with anyone other than my instructor or the teaching assistants
+    assigned to this course.
+
+    I have not used Java language code obtained from another student,
+    or any other unauthorized source, either modified or unmodified.
+    
+    If any Java language code or documentation used in my program
+    was obtained from another source, such as a textbook or website,
+    that has been clearly noted with a proper citation in the comments
+    of my program.
+*/
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -96,11 +117,6 @@ public class SceneCanvas extends JComponent {
         RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
- 
-
-        //Rectangle background = new Rectangle(0, 0, 800, 600, Color.BLACK);
-        //background.draw(g2d);
-
 
         for (DrawingObject d : elements) {
             d.draw(g2d);
@@ -108,7 +124,7 @@ public class SceneCanvas extends JComponent {
     }
 
     public void strum() {
-        if (addVelocity == 0) addVelocity += 80;
+        if (addVelocity == 0) addVelocity += 82;
         System.out.println(addVelocity);
         c = 0;
         strumTimer = new Timer(15, new ActionListener() {
@@ -116,7 +132,7 @@ public class SceneCanvas extends JComponent {
             public void actionPerformed(ActionEvent ae) {
                 c+=10; 
                 if (c > 9500) {
-                    if (addVelocity == 80) addVelocity -= 80;
+                    if (addVelocity == 82) addVelocity -= 82;
                     c = 0;
                     strumTimer.stop();
                 }
